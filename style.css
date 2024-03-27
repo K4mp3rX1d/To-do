@@ -56,24 +56,43 @@ ul {
 li {
     display: flex;
     justify-content: space-between;
+    gap: 5px;
     align-items: center;
     margin: 2px 0;
     padding: 5px 10px;
     background-color: rgba(0,0,0,.2);
 }
 
-.item-remove {
-    color: rgba(255, 0, 0, 0.6);
-    font-weight: 900;
+.item-remove, .status {
     padding: 0 5px;
-    font-size: 10px;
-    line-height: 16px;
+    line-height: 5px;
     cursor: pointer;
-    border: 2px solid;
-    border-radius: 50%;
     display: flex;
     flex-grow: 0;
     flex-shrink: 0;
+    font-size: 20px;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.1);
+}
+
+.status:hover {
+    color: rgb(14, 153, 67);
+}
+
+.done {
+    font-style: italic;
+    opacity: .6;
+    text-decoration: line-through;
+}
+
+.done .status {
+    color: rgb(14, 153, 67);
+}
+
+.item-remove {
+    color: rgba(255, 0, 0, 0.6);
+    margin-left: auto;
+    font-size: 16px;
 }
 
 .item-remove:hover {

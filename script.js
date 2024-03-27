@@ -1,5 +1,5 @@
 const input = document.querySelector('input');
-input.focus();
+// input.focus();
 const button = document.querySelector('.button')
 const list = document.querySelector('ul');
 
@@ -10,22 +10,31 @@ input.addEventListener('keypress', (e) => {
     }
 });
 
+
 function addToList() {
     const inputText = input.value;
     input.value = "";
+
+    const done = document.createElement('div');
+    done.innerHTML = "&check;"
+    done.classList.toggle('status');
+    done.addEventListener('click', () => {
+        // IMPROVE THIS...
+        done.parentElement.classList.add('.done');
+    });
 
     const item = document.createElement('li');
     const itemText = document.createElement('span');
     itemText.textContent = inputText;
 
     const itemRemove = document.createElement('div');
-    itemRemove.textContent = 'X';
-    // itemRemove.toggleAttribute('class', 'item-remove');
-    itemRemove.setAttribute('class', 'item-remove');
+    itemRemove.innerHTML = '&#10060;';
+    itemRemove.classList.toggle('item-remove');
     itemRemove.addEventListener('click', () => {
         itemRemove.parentNode.remove();
     });
 
+    item.appendChild(done);
     item.appendChild(itemText);
     item.appendChild(itemRemove);
     list.appendChild(item);
