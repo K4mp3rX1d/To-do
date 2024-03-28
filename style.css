@@ -85,7 +85,7 @@ li {
     text-decoration: line-through;
 }
 
-.done .status {
+li:has(> .done) .status {
     color: rgb(14, 153, 67);
 }
 
