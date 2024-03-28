@@ -1,5 +1,5 @@
 const input = document.querySelector('.input');
-// input.focus();
+input.focus();
 const button = document.querySelector('.button')
 const list = document.querySelector('ul');
 
