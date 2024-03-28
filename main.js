@@ -19,8 +19,7 @@ function addToList() {
     done.innerHTML = "&check;"
     done.classList.toggle('status');
     done.addEventListener('click', () => {
-        // IMPROVE THIS...
-        done.parentElement.classList.add('.done');
+        done.parentElement.childNodes[1].classList.toggle('done');
     });
 
     const item = document.createElement('li');
