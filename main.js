@@ -1,4 +1,4 @@
-const input = document.querySelector('input');
+const input = document.querySelector('.input');
 // input.focus();
 const button = document.querySelector('.button')
 const list = document.querySelector('ul');
@@ -12,8 +12,8 @@ input.addEventListener('keypress', (e) => {
 
 
 function addToList() {
-    const inputText = input.value;
-    input.value = "";
+    const inputText = input.textContent;
+    input.textContent = "";
 
     const done = document.createElement('div');
     done.innerHTML = "&check;"
