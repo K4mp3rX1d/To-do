@@ -1,7 +1,8 @@
 const input = document.querySelector('.input');
-input.focus();
+// input.focus();
 const button = document.querySelector('.button')
 const list = document.querySelector('ul');
+const acomplished = document.querySelector('.acomplished > ul');
 
 input.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
@@ -19,7 +20,10 @@ function addToList() {
     done.innerHTML = "&check;"
     done.classList.toggle('status');
     done.addEventListener('click', () => {
-        done.parentElement.childNodes[1].classList.toggle('done');
+        const selectedItem = done.parentElement;
+        selectedItem.childNodes[1].classList.toggle('done');
+        // Improve this!
+        acomplished.appendChild(selectedItem);
     });
 
     const item = document.createElement('li');

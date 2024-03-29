@@ -9,26 +9,33 @@ body {
     font-size: 16px;
 }
 
-h1 {
-    text-align: center;
-    width: 100%;
+h1, h2 {
     text-transform: uppercase;
     font-weight: 400;
-    word-spacing: 10px;
     border-bottom: 2px solid;
     margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    word-spacing: 10px;
+}
+
+h2 {
+    font-size: 20px;
+    word-spacing: 8px;
 }
 
 .container {
     max-width: 600px;
     margin: 0 auto;
-    background-color: cadetblue;
 }
 
-.main {
+.main, .todo, .acomplished {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    height: 100vh;
     background-color: beige;
     padding: 30px 20px 15px 20px;
 }
@@ -49,7 +56,7 @@ h1 {
     content: attr(data-placeholder);
     display: block;
     height: 100%;
-    color: #00000066;
+    color: rgba(0, 0, 0, 0.4);
   }
 
 ul {
