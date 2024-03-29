@@ -1,7 +1,7 @@
 const input = document.querySelector('.input');
 // input.focus();
 const button = document.querySelector('.button')
-const list = document.querySelector('ul');
+const list = document.querySelector('.todo > ul');
 const acomplished = document.querySelector('.acomplished > ul');
 
 input.addEventListener('keypress', (e) => {
@@ -21,9 +21,9 @@ function addToList() {
     done.classList.toggle('status');
     done.addEventListener('click', () => {
         const selectedItem = done.parentElement;
+        const selectedParent = selectedItem.parentElement === list ? acomplished : list;
         selectedItem.childNodes[1].classList.toggle('done');
-        // Improve this!
-        acomplished.appendChild(selectedItem);
+        selectedParent.appendChild(selectedItem);
     });
 
     const item = document.createElement('li');
