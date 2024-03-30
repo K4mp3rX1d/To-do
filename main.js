@@ -29,6 +29,20 @@ function addToList() {
     const item = document.createElement('li');
     const itemText = document.createElement('span');
     itemText.textContent = inputText;
+    itemText.addEventListener('dblclick', () => {
+        itemText.classList.add('editable');
+        itemText.contentEditable = true;
+    });
+    itemText.addEventListener('focusout', () => {
+        itemText.classList.remove('editable');
+        itemText.contentEditable = false;
+    });
+    itemText.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            itemText.classList.remove('editable');
+            itemText.contentEditable = false;
+        }
+    });
 
     const itemRemove = document.createElement('div');
     itemRemove.innerHTML = '&#10060;';

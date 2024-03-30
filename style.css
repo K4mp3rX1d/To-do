@@ -48,13 +48,12 @@ h2 {
     font-style: italic;
     background-color: beige;
     margin: 5px 10px;
-    border: 0;
-    outline: 0;
 }
 
-.content-editable {
+.editable {
     border: 0;
     outline: 0;
+    background-color: beige;
 }
 
 .input:empty::before {
@@ -74,7 +73,7 @@ ul {
 
 li {
     display: flex;
-    justify-content: space-between;
+    justify-content: stretch;
     gap: 5px;
     align-items: center;
     margin: 2px 0;
