@@ -1,5 +1,5 @@
 const input = document.querySelector('.input');
-// input.focus();
+input.focus();
 const button = document.querySelector('.button')
 const list = document.querySelector('.todo > ul');
 const acomplished = document.querySelector('.acomplished > ul');
@@ -29,9 +29,11 @@ function addToList() {
     const item = document.createElement('li');
     const itemText = document.createElement('span');
     itemText.textContent = inputText;
-    itemText.addEventListener('dblclick', () => {
-        itemText.classList.add('editable');
-        itemText.contentEditable = true;
+    itemText.addEventListener('pointerdown', () => {
+        if (itemText.parentElement.parentElement === list) {
+            itemText.classList.add('editable');
+            itemText.contentEditable = true;
+        }
     });
     itemText.addEventListener('focusout', () => {
         itemText.classList.remove('editable');

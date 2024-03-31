@@ -35,9 +35,21 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    height: 100vh;
+    min-height: 67vh;
+    overflow: visible;
     background-color: beige;
     padding: 30px 10px 15px 10px;
+}
+
+.todo li, .acomplished li {
+    display: flex;
+    justify-content: stretch;
+}
+
+li span {
+    flex-grow: 1;
+    padding: 0 3px;
+    cursor: pointer;
 }
 
 .input {
@@ -53,6 +65,7 @@ h2 {
 .editable {
     border: 0;
     outline: 0;
+    cursor: text;
     background-color: beige;
 }
 
@@ -109,7 +122,6 @@ li:has(> .done) .status {
 
 .item-remove {
     color: rgba(255, 0, 0, 0.6);
-    margin-left: auto;
     font-size: 16px;
 }
 
